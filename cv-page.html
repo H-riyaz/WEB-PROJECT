@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riyaj Timalsina - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2d3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --white: #ffffff;
+            --gray: #95a5a6;
+            --border-color: #eaeaea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: var(--white);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+
+            .print-btn, .back-btn {
+                display: none;
+            }
+        }
+
+        /* Header */
+        .cv-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 50px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Button Group */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .print-btn {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .print-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .back-btn {
+            background-color: var(--gray);
+            color: var(--white);
+        }
+
+        .back-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        /* Main CV Content */
+        .cv-content {
+            padding: 2rem;
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+        }
+
+        .contact-icon {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Summary */
+        .summary {
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background-color: var(--light-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Education and Experience */
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            border-left: 2px solid var(--secondary-color);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .timeline-subheader {
+            color: var(--secondary-color);
+            margin: 0.25rem 0 0.5rem;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .project-title {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .project-tech {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin: 0.25rem 0 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .cv-header {
+                padding: 2rem 1rem;
+            }
+
+            .cv-content {
+                padding: 1.5rem;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="cv-header">
+            <div class="profile-image">
+                <span>RT</span>
+            </div>
+            <h1>Riyaj Timalsina</h1>
+            <h2>BCA Student | Web Developer</h2>
+        </header>
+
+        <div class="button-group">
+            <a href="index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <button class="btn print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print CV</button>
+        </div>
+
+        <main class="cv-content">
+            <section class="cv-section">
+                <h2 class="cv-section-title">Contact Information</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span>riyaj.timalsina@email.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span>+977 9812345678</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+                        <span>linkedin.com/in/riyaj-timalsina</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-github"></i></span>
+                        <span>github.com/riyaj-timalsina</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="cv-section-title">Professional Summary</h2>
+                <div class="summary">
+                    <p>
+                        I am a motivated BCA student with a passion for web development and programming. I have a strong foundation in programming languages such as C, Java, HTML, CSS, and JavaScript. I am committed to continuous learning and development in the field of computer applications. My goal is to leverage my technical skills and education to contribute effectively to the IT industry.
+                    </p>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="cv-section-title">Technical Skills</h2>
+                <div class="skills-list">
+                    <div class="skill-tag">HTML5</div>
+                    <div class="skill-tag">CSS3</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">C Programming</div>
+                    <div class="skill-tag">Responsive Web Design</div>
+                    <div class="skill-tag">Git/GitHub</div>
+                    <div class="skill-tag">SQL Basics</div>
+                    <div class="skill-tag">Problem Solving</div>
+                    <div class="skill-tag">Object-Oriented Programming</div>
+                    <div class="skill-tag">Data Structures</div>
+                    <div class="skill-tag">Algorithms</div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="cv-section-title">Education</h2>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span>Bachelor in Computer Application (BCA)</span>
+                        <span>2022 - Present</span>
+                    </div>
+                    <div class="timeline-subheader">XYZ College of Information Technology</div>
+                    <div class="timeline-content">
+                        <p>
+                            Pursuing a degree in Computer Application with focus on software development, web technologies, and database management. Key coursework includes:
+                        
